@@ -1,0 +1,24 @@
+# Portão automático de qualidade. Ajuste ao stack real do projeto.
+# Revisão por agente cobre julgamento; CI cobre regressão. São coisas
+# diferentes e o método precisa das duas — configure isto no dia 1.
+
+name: CI
+
+on:
+  pull_request:
+    branches: [dev, main]
+  push:
+    branches: [dev, main]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run build
+      - run: npm test

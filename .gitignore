@@ -1,0 +1,14 @@
+# Segredos — nunca versionar
+.env
+.env.*
+*.pem
+*.key
+
+# Dependências e build (o kit não tem, mas o projeto copiado terá)
+node_modules/
+dist/
+build/
+
+# Sistema
+.DS_Store
+Thumbs.db
