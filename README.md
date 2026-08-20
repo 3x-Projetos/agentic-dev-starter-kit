@@ -6,6 +6,10 @@ que vira métrica sem planilha.
 
 Copie no início do projeto, preencha, e comece a trabalhar.
 
+Este README é o **guia de implantação** — passo a passo e comandos. Para entender
+o modelo antes de adotá-lo (papéis, ciclo de ponta a ponta e onde a automação
+para), leia [`PROCESS.md`](PROCESS.md).
+
 ---
 
 ## O que o método entrega
@@ -298,6 +302,8 @@ importante do kit, porque é a que impede o conjunto de virar peso morto.
 ## Estrutura
 
 ```
+README.md                          guia de implantação — este arquivo
+PROCESS.md                         o modelo operacional: papéis, ciclo, automação
 CLAUDE.md                          ponto de entrada — o loop e os defaults
 .claude/rules/workflow.md          issue → branch → PR → revisão → merge → versão
 .claude/rules/quality.md           segurança, testes, código, documentação
