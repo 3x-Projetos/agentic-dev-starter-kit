@@ -25,9 +25,35 @@ nobody read and an agent nobody invokes cost context in every session. The kit
 grows by incident, not by anticipation — and `.claude/agents/_referencia/` holds
 9 ready-made domain agents for when the need shows up.
 
+## The work cycle
+
+Every change, however small, goes through the same loop:
+
 ```
 Issue → branch → implement → agent review → PR → CI → merge → version → tag
 ```
+
+| Moment | What to do | Who to invoke |
+|---|---|---|
+| Before anything | Create the issue with title, body and labels | `issue-manager` |
+| If there is more than one path | Decide the approach before writing code | `tech-lead` |
+| Start | Branch off `dev` | `git-specialist` |
+| Implement | — | you + Claude |
+| Before the PR | Review the diff | `code-reviewer` — **always** |
+| If behavior changed | Test coverage | `test-specialist` |
+| If it touched auth/permissions/input/execution | Offensive review | `security-reviewer` |
+| If behavior, setup or deploy changed | Update the docs **in the same PR** | `docs-writer` |
+| Open the PR | Body filled in, `Closes #N`, version bump on the branch | `git-specialist` |
+| After the remote merge | `git pull` in the working tree **before** build or deploy | `git-specialist` |
+| After the deploy is validated | Annotated tag on `main` | `git-specialist` |
+
+Two rules keep the loop honest. **Decision defaults** remove repeated deliberation:
+create an issue → *create*, big commit → *split*, needs a test → *add*, docs out of
+date → *update*, bump the version → *bump*, record a decision → *record*. And **the
+version bump goes in the change's own PR**, as the last commit on the branch — so
+every merge into `main` maps to exactly one version.
+
+The full model is in [`PROCESS.md`](PROCESS.md) (pt-BR).
 
 ## Quickstart
 
