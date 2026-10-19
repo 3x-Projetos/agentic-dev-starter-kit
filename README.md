@@ -1,5 +1,10 @@
 # Agentic Dev Starter Kit
 
+> 🌐 **Language note:** this README is in English, but the kit itself —
+> `PROCESS.md`, `CLAUDE.md`, the rules, and every agent prompt — is written in
+> **Brazilian Portuguese (pt-BR)**. The agents are meant to be used and read in
+> Portuguese. Translate the files to your language if you adopt it.
+
 A seed for starting a project with agent-assisted development: a single work
 loop, specialists as versioned files, and a structured trail that turns into
 metrics without a spreadsheet.
