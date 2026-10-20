@@ -15,10 +15,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      # O kit em si não tem código. O gate só roda em projetos com stack Node.
+      - id: stack
+        run: |
+          if [ -f package.json ]; then echo "node=true" >> "$GITHUB_OUTPUT"; else echo "::notice::Sem package.json - gate de Node ignorado"; fi
+      - if: steps.stack.outputs.node == 'true'
+        uses: actions/setup-node@v4
         with:
           node-version: '20'
-      - run: npm ci
-      - run: npm run lint
-      - run: npm run build
-      - run: npm test
+      - if: steps.stack.outputs.node == 'true'
+        run: npm ci
+      - if: steps.stack.outputs.node == 'true'
+        run: npm run lint
+      - if: steps.stack.outputs.node == 'true'
+        run: npm run build
+      - if: steps.stack.outputs.node == 'true'
+        run: npm test
