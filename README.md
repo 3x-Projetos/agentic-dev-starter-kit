@@ -5,11 +5,7 @@
 > is written in **Brazilian Portuguese (pt-BR)**.
 > Translate the files to your language if you adopt it.
 
-A seed for starting a project with agent-assisted development:
-- a single work loop
-- specialists as versioned files
-- a structured trail that turns into metrics.
-
+A seed for starting a project with agent-assisted development
 Copy it at the start of a project, fill it in, and get to work.
 
 ## What the method delivers
