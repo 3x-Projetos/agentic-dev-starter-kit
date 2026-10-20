@@ -2,32 +2,32 @@
 
 > 🌐 **Language note:** this README and [`SETUP.md`](SETUP.md) are in English, but
 > the kit itself — `PROCESS.md`, `CLAUDE.md`, the rules, and every agent prompt —
-> is written in **Brazilian Portuguese (pt-BR)**. The agents are meant to be used
-> and read in Portuguese. Translate the files to your language if you adopt it.
+> is written in **Brazilian Portuguese (pt-BR)**.
+> Translate the files to your language if you adopt it.
 
-A seed for starting a project with agent-assisted development: a single work
-loop, specialists as versioned files, and a structured trail that turns into
-metrics without a spreadsheet.
+A seed for starting a project with agent-assisted development:
+- a single work loop
+- specialists as versioned files
+- a structured trail that turns into metrics.
 
 Copy it at the start of a project, fill it in, and get to work.
 
 ## What the method delivers
 
-It is not code generation. It is three things that only work together:
-
 1. **One non-negotiable loop** — no process decision is ever made twice
-2. **Specialists as versioned files** — peer review where there are no peers
+2. **Specialists as versioned files** — peer review when there are no human peers
 3. **A structured trail** — issues with a taxonomy that answer, on their own,
    where the effort is going
 
-The base is **3 rule files and 8 agents**. That is deliberately small: a rule
-nobody read and an agent nobody invokes cost context in every session. The kit
-grows by incident, not by anticipation — and `.claude/agents/_referencia/` holds
+The base is **3 rule files and 8 agents**. That is deliberately small:
+a rule nobody read and an agent nobody invokes cost context in every session.
+The kit grows by need, not by anticipation — and `.claude/agents/_referencia/` holds
 9 ready-made domain agents for when the need shows up.
+More specialists can be created if and when your project needs.
 
 ## The work cycle
 
-Every change, however small, goes through the same loop:
+Every change goes through the same loop:
 
 ```
 Issue → branch → implement → agent review → PR → CI → merge → version → tag
